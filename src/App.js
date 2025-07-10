@@ -1,11 +1,14 @@
 import './App.css';
+import React, { useState } from "react";
 import styled from "styled-components";
 import{ThemeProvider} from  "styled-components";
 import {darkTheme} from "./utils/Themes";
 import Navbar from './components/Navbar';
 import Hero from './components/Herosections';
 import Skills from './components/Skills';
+import Experience from "./components/Experience";
 import Education from './components/Education';
+import Certificates from './components/Certificate';
 import { BrowserRouter as Router } from 'react-router-dom';
 import  Projects  from './components/Projects';
 import Footer from './components/Footer';
@@ -21,6 +24,7 @@ const Wrapper = styled.div`
   clip-path: polygon(0 0, 100% 0, 100% 100%,30% 98%, 0 100%);
 `
 function App() {
+  const [openModal, setOpenModal] = useState({ state: false, project: null });
   return (
     <ThemeProvider theme={darkTheme}>
     <Router>
@@ -29,9 +33,9 @@ function App() {
         <Hero/>
         <Wrapper>
         <Skills/>
-        
-        <Projects />
-        
+        <Experience />
+        <Projects openModal={openModal} setOpenModal={setOpenModal} />
+        <Certificates />
           <Education/>
           
         </Wrapper>

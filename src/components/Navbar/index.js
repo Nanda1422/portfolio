@@ -191,7 +191,13 @@ const Navbar = () => {
           <NavLink href="#education">Education</NavLink>
         </NavItems>
         <ButtonContainer>
-          <GitHubButton>Github Profile</GitHubButton>
+          <GitHubButton
+    href="https://github.com/Nanda1422"
+    target="_blank"
+    rel="noopener noreferrer"
+  >
+    Github Profile
+  </GitHubButton>
         </ButtonContainer>
       </NavContainer>
       {open && <MobileMenu isOpen={open}>
@@ -214,7 +220,7 @@ const Navbar = () => {
             background: `${theme.primary}`,
              color: 'white',
              width: 'max-content'}}
-              href='/' target="_blank">Github Profile</GitHubButton>
+              href='https://github.com/Nanda1422' target="_blank">Github Profile</GitHubButton>
           </MobileMenu>
       }
     </Nav>

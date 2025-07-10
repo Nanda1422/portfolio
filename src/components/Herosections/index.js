@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import {Bio} from '../../Data/constants';
 import Typewriter from 'typewriter-effect';
-import HeroImg from '../../components/images/Heroimage.jpg'
+import HeroImg from '../../components/images/Heroimage1.jpg'
 
 const HeroContainer = styled.div`
   background: ${({ theme }) => theme.card_light};
@@ -30,7 +30,7 @@ const HeroBg = styled.div`
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height:100%;
   max-width: 1360px;
   overflow: hidden;
   padding: 0 30px;
@@ -147,25 +147,34 @@ const SubTitle = styled.div`
   }
 `;
 const Img = styled.img`
-  position:relative;
-  left:50px;
+  position: relative;
+  left: 50px;
   width: 100%;
-  height: 90%;
-  max-width: 400px;
-  max-height: 400px;
+  aspect-ratio: 1/1;
+  max-width: 350px;
+  max-height: 350px;
   border-radius: 50%;
-  border: 2px solid ${({ theme }) => theme.primary};
-  margin-bottom:150px;
- 
+  border: 4px solid ${({ theme }) => theme.primary};
+  margin-bottom: 150px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 1.5px 8px ${({ theme }) => theme.primary}33;
+  object-fit: cover;
+  transition: box-shadow 0.3s, transform 0.3s;
+
+  &:hover {
+    box-shadow: 0 12px 40px ${({ theme }) => theme.primary}55, 0 2px 12px #00000033;
+    transform: scale(1.04);
+  }
 
   @media (max-width: 768px) {
-    max-width: 400px;
-    max-height: 400px;
+    max-width: 320px;
+    max-height: 320px;
+    left: 0;
   }
 
   @media (max-width: 640px) {
-    max-width: 280px;
-    max-height: 280px;
+    max-width: 200px;
+    max-height: 200px;
+    left: 0;
   }
 `;
 
